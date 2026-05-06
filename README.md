@@ -58,7 +58,7 @@ Built to operate in live market conditions with a strong emphasis on:
 
 ### ⚡ Execution Engine
 
-* Designed for real-time trading via broker APIs such as Alpaca
+* Designed for real-time trading via Alpaca's Trade API
 * Handles:
 
   * Order generation
@@ -176,7 +176,10 @@ I had to reset to a fresh account ($100,000) since I was developing this on an a
 
 The live system includes:
 
-* Automated scheduling and execution
+* Automated trading universe selection
+* Automated monitoring and order execution
+* Automatic portfolio rebalancing
+* Automated capital preservation & risk management
 * Fault-tolerant data pipelines
 * Real-time logging and monitoring
 * Persistent trade journal and equity tracking
@@ -209,10 +212,11 @@ All core alpha-generating components remain private.
 
 ## Roadmap
 
-* Expanded multi-asset support
 * Enhanced regime classification models
 * Advanced execution optimization
+* Sentiment analysis
 * Integration with additional data sources
+* Mobile app dashboard
 
 ---
 
