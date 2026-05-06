@@ -217,8 +217,8 @@ All core alpha-generating components remain private.
 
 For collaboration, investment inquiries, or technical discussion:
 
-* Email: [krypto.9297@gmail.com](mailto:krypto.9297@gmail.com)
-* GitHub: @krypto.9297
+* Email: [blkpvnthr@asmaa.dev](mailto:blkpvnthr@asmaa.dev)
+* GitHub: [github.com/blkpvnthr](https://github.com/blkpvnthr)
 
 ---
 
