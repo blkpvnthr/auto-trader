@@ -8,7 +8,10 @@
 
 This repository showcases a **production-grade quantitative trading system** designed to identify and execute high-conviction market opportunities using **reinforcement learning, statistical modeling, and dynamic portfolio optimization**.
 
-The system is built to operate in live market conditions with a strong emphasis on:
+
+This system integrates **data ingestion, feature engineering, machine learning, portfolio optimization, and execution** into a unified pipeline powered by the Alpaca API. Visit <a href="https://alpaca.markets/algotrading">alpaca.markets/algotrading</a> for a free account.
+
+Built to operate in live market conditions with a strong emphasis on:
 
 * **Capital preservation**
 * **Risk-adjusted return maximization**
