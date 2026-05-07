@@ -174,7 +174,7 @@ The system appears capable of identifying favorable trade opportunities while al
 <br><br>
 
 ---
-
+<br>
 ### Day 3:
 
 The system continued to let good trades develop and scaled deeper into runners while mitigating bad trades. No concerning results as of yet.
