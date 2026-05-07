@@ -218,6 +218,23 @@ I decided to start fresh and reset the account equity back to $13,000 for tomorr
 </p>
 <!-- markdownlint-enable MD033 -->
 
+---
+
+### Day 4:
+
+Just adding this here as a placeholder for now until i have actual content to poplulate this with.
+
+<!-- markdownlint-disable MD033 -->
+<!-- Image carousel / gallery (README-friendly) -->
+<p align="center">
+  <a href="images/dashboard.png"><img src="images/dashboard.png" width="900" height="500" alt="#" /></a>
+</p>
+<!-- markdownlint-enable MD033 -->
+<!-- Image carousel / gallery (README-friendly) -->
+<p align="center">
+  <a href="images/quantum-quant-investor-page.png"><img src="images/quantum-quant-investor-page.png" width="900" height="500" alt="investors" /></a>
+</p>
+<!-- markdownlint-enable MD033 -->
 
 ---
 
