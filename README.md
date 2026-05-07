@@ -222,7 +222,7 @@ I decided to start fresh and reset the account equity back to $13,000 for tomorr
 
 ### Day 4:
 
-Just adding this here as a placeholder for now until i have actual content to poplulate this with.
+Just adding this here as a placeholder for now until i have actual content to poplulate this with. This is actually a locally running portfolio equity journal.
 
 <!-- markdownlint-disable MD033 -->
 <!-- Image carousel / gallery (README-friendly) -->
@@ -230,6 +230,7 @@ Just adding this here as a placeholder for now until i have actual content to po
   <a href="images/dashboard.png"><img src="images/dashboard.png" width="900" height="500" alt="#" /></a>
 </p>
 <!-- markdownlint-enable MD033 -->
+This is an investor information page that goes over company goals. <a href="https://quantumquant.trade">quantumquant.trade</a>
 <!-- Image carousel / gallery (README-friendly) -->
 <p align="center">
   <a href="images/quantumquant-investor-page.png"><img src="images/quantumquant-investor-page.png" width="900" height="500" alt="investors" /></a>
