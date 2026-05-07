@@ -204,7 +204,7 @@ I’ve set up the 13k account for live trading.
 </p>
 <!-- markdownlint-enable MD033 -->
 
-Despite this run being considerably less impressive than the rest due to the drastically reduced portfolio equity, results still prove to be favorable with the model still accurately predicting positive momentum in stock price. I should also mention **this iteration only traded for about 30 minutes** before markets closed today.
+Despite this run being considerably less impressive than the rest due to the drastically reduced portfolio equity, results still prove to be favorable with the model accurately predicting positive momentum in stock price. I should also mention **this iteration only traded for about 30 minutes** before markets closed today.
 
 I decided to start fresh and reset the account equity back to $13,000 for tomorrow’s session.
 
