@@ -170,6 +170,8 @@ I had to reset to a fresh account ($100,000) since I was developing this on an a
 </p>
 <!-- markdownlint-enable MD033 -->
 
+Based on today’s performance, the system appears capable of identifying favorable trade opportunities while also demonstrating an ability to manage risk by cutting losses when conditions deteriorate. However, these observations are preliminary and will require further validation across broader market conditions and longer evaluation periods.
+
 ---
 
 ### Day 3:
