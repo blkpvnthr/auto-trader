@@ -172,6 +172,42 @@ I had to reset to a fresh account ($100,000) since I was developing this on an a
 
 ---
 
+### Day 3:
+
+The system continued to let good trades develop and scaled into runners. Haven't seen any concerning results as of yet.
+
+<!-- markdownlint-disable MD033 -->
+<!-- Image carousel / gallery (README-friendly) -->
+<p align="center">
+  <a href="images/may-06.png"><img src="images/may-06.png" width="900" height="500" alt="results" /></a>
+</p>
+<!-- markdownlint-enable MD033 -->
+<!-- Image carousel / gallery (README-friendly) -->
+<p align="center">
+  <a href="images/may-06-2.png"><img src="images/img4.png" width="900" height="500" alt="results" /></a>
+</p>
+<!-- markdownlint-enable MD033 -->
+
+>**UPDATE**<br>
+I was able to secure funding for an alpaca account with $13,000 as the initial investment in this system. So I redeveloped the program to paper trade with 13k instead of 100k. I plan on paper trading with the 13k initially to ensure the system still works as expected despite the reduced portfolio equity.
+
+I’ve set up the 13k account for live trading.
+
+<!-- markdownlint-disable MD033 -->
+<!-- Image carousel / gallery (README-friendly) -->
+<p align="center">
+  <a href="images/13k.png"><img src="images/13k.png" width="900" height="500" alt="results" /></a>
+</p>
+<!-- markdownlint-enable MD033 --><!-- Image carousel / gallery (README-friendly) -->
+<p align="center">
+  <a href="images/13k-2.png"><img src="images/13k-2.png" width="900" height="500" alt="results" /></a>
+</p>
+
+Despite this run being considerably less impressive than the rest due to the drastically reduced portfolio equity, results still prove to be favorable with the model still accurately predicting positive momentum in stock price. I should also mention **this iteration only traded for about 30 minutes** before markets closed today.
+
+
+---
+
 ## Production Considerations
 
 The live system includes:
