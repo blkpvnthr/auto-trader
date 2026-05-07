@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -858,12 +859,15 @@
   <div class="modal-backdrop" id="interestModal" role="dialog" aria-modal="true" aria-labelledby="interestTitle">
     <div class="modal">
       <h3 id="interestTitle">Request Investor Details</h3>
-      <p>Submit your contact information and a short message. Connect this form to your backend, Formspree, Supabase, or CRM.</p>
-      <form class="form-grid" onsubmit="event.preventDefault(); alert('Demo form submitted. Connect this to your backend.'); closeModals();">
-        <input type="text" placeholder="Full name" required />
-        <input type="email" placeholder="Email address" required />
-        <input type="text" placeholder="Investor type or organization" />
-        <textarea rows="4" placeholder="What would you like to learn more about?"></textarea>
+      <p>Submit your contact information and a short message. This form will be emailed directly to the founder.</p>
+      <form class="form-grid" action="https://formsubmit.co/blkpvnthr@asmaa.dev" method="POST">
+        <input type="hidden" name="_subject" value="New Investor Details Request - quantumquant" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="full_name" placeholder="Full name" required />
+        <input type="email" name="email" placeholder="Email address" required />
+        <input type="text" name="investor_type_or_organization" placeholder="Investor type or organization" />
+        <textarea rows="4" name="message" placeholder="What would you like to learn more about?"></textarea>
         <div class="modal-actions">
           <button type="button" class="btn btn-muted" data-close-modal>Cancel</button>
           <button type="submit" class="btn btn-primary">Send request</button>
@@ -876,10 +880,13 @@
     <div class="modal">
       <h3 id="questionTitle">Ask a Question</h3>
       <p>Use this form for investor questions about the business, deal structure, or platform progress.</p>
-      <form class="form-grid" onsubmit="event.preventDefault(); alert('Demo question submitted. Connect this to your backend.'); closeModals();">
-        <input type="text" placeholder="Your name" required />
-        <input type="email" placeholder="Email address" required />
-        <textarea rows="5" placeholder="Your question" required></textarea>
+      <form class="form-grid" action="https://formsubmit.co/blkpvnthr@asmaa.dev" method="POST">
+        <input type="hidden" name="_subject" value="New Investor Question - quantumquant" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Email address" required />
+        <textarea rows="5" name="question" placeholder="Your question" required></textarea>
         <div class="modal-actions">
           <button type="button" class="btn btn-muted" data-close-modal>Cancel</button>
           <button type="submit" class="btn btn-primary">Submit question</button>
