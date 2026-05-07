@@ -231,7 +231,7 @@ Just adding this here as a placeholder for now until i have actual content to po
 </p>
 <!-- markdownlint-enable MD033 -->
 
-This is an investor information page that goes over company goals. <a href="https://quantumquant.trade">quantumquant.trade</a>
+This is the investor information page that goes over company goals. <a href="https://quantumquant.trade">quantumquant.trade</a>
 
 <!-- Image carousel / gallery (README-friendly) -->
 <p align="center">
