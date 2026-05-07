@@ -148,7 +148,7 @@ This system was able to produce more than $1,000 on its first day of trading.
 <!-- markdownlint-disable MD033 -->
 <!-- Image carousel / gallery (README-friendly) -->
 <p align="center">
-  <a href="images/img6.png"><img src="images/img6.png" width="900" height="750" alt="results" /></a>
+  <a href="images/img6.png"><img src="images/img6.png" width="900" height="750" alt="img6" /></a>
 </p>
 <!-- markdownlint-enable MD033 -->
 
@@ -161,12 +161,12 @@ I had to reset to a fresh account ($100,000) since I was developing this on an a
 <!-- markdownlint-disable MD033 -->
 <!-- Image carousel / gallery (README-friendly) -->
 <p align="center">
-  <a href="images/img5.png"><img src="images/img5.png" width="900" height="500" alt="results" /></a>
+  <a href="images/img5.png"><img src="images/img5.png" width="900" height="500" alt="img5" /></a>
 </p>
 <!-- markdownlint-enable MD033 -->
 <!-- Image carousel / gallery (README-friendly) -->
 <p align="center">
-  <a href="images/img4.png"><img src="images/img4.png" width="900" height="500" alt="results" /></a>
+  <a href="images/img4.png"><img src="images/img4.png" width="900" height="500" alt="img4" /></a>
 </p>
 <!-- markdownlint-enable MD033 -->
 
@@ -179,12 +179,12 @@ The system continued to let good trades develop and scaled into runners. Haven't
 <!-- markdownlint-disable MD033 -->
 <!-- Image carousel / gallery (README-friendly) -->
 <p align="center">
-  <a href="images/may-06.png"><img src="images/may-06.png" width="900" height="500" alt="results" /></a>
+  <a href="images/may-06.png"><img src="images/may-06.png" width="900" height="500" alt="may-06" /></a>
 </p>
 <!-- markdownlint-enable MD033 -->
 <!-- Image carousel / gallery (README-friendly) -->
 <p align="center">
-  <a href="images/may-06-2.png"><img src="images/img4.png" width="900" height="500" alt="results" /></a>
+  <a href="images/may-06-2.png"><img src="images/may-06-2.png" width="900" height="500" alt="may-06-2" /></a>
 </p>
 <!-- markdownlint-enable MD033 -->
 
@@ -196,23 +196,24 @@ I’ve set up the 13k account for live trading.
 <!-- markdownlint-disable MD033 -->
 <!-- Image carousel / gallery (README-friendly) -->
 <p align="center">
-  <a href="images/13k.png"><img src="images/13k.png" width="900" height="500" alt="results" /></a>
+  <a href="images/13k.png"><img src="images/13k.png" width="900" height="500" alt="13k" /></a>
 </p>
 <!-- markdownlint-enable MD033 --><!-- Image carousel / gallery (README-friendly) -->
 <p align="center">
-  <a href="images/13k-2.png"><img src="images/13k-2.png" width="900" height="500" alt="results" /></a>
+  <a href="images/13k-2.png"><img src="images/13k-2.png" width="900" height="500" alt="13k-2" /></a>
 </p>
+<!-- markdownlint-enable MD033 -->
 
 Despite this run being considerably less impressive than the rest due to the drastically reduced portfolio equity, results still prove to be favorable with the model still accurately predicting positive momentum in stock price. I should also mention **this iteration only traded for about 30 minutes** before markets closed today.
 
 I decided to start fresh and reset the account equity back to $13,000 for tomorrow’s session.
 
-<!-- markdownlint-enable MD033 -->
+<!-- markdownlint-disable MD033 -->
 <!-- Image carousel / gallery (README-friendly) -->
 <p align="center">
-  <a href="images/13k-reset.png"><img src="images/13k-reset.png" width="900" height="500" alt="13k-reset" /></a>
+  <a href="images/13K-reset.png"><img src="images/13K-reset.png" width="900" height="500" alt="13K-reset" /></a>
 </p>
-
+<!-- markdownlint-enable MD033 -->
 
 
 ---
