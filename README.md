@@ -232,7 +232,7 @@ Just adding this here as a placeholder for now until i have actual content to po
 <!-- markdownlint-enable MD033 -->
 <!-- Image carousel / gallery (README-friendly) -->
 <p align="center">
-  <a href="images/quantum-quant-investor-page.png"><img src="images/quantum-quant-investor-page.png" width="900" height="500" alt="investors" /></a>
+  <a href="images/quantumquant-investor-page.png"><img src="images/quantumquant-investor-page.png" width="900" height="500" alt="investors" /></a>
 </p>
 <!-- markdownlint-enable MD033 -->
 
