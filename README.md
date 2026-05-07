@@ -284,4 +284,4 @@ It is designed not just to perform—but to **survive, adapt, and scale** in rea
 ---
 
 >**DISCLAIMER**<br>
-> This project is for informational and research purposes only and does not constitute financial advice or an offer to manage capital. Trading involves risk, including potential loss of principal.# auto-trader
+> This project is for informational and research purposes only and does not constitute financial advice or an offer to manage capital. Trading involves risk, including potential loss of principal.
