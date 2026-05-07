@@ -174,7 +174,6 @@ The system appears capable of identifying favorable trade opportunities while al
 <br><br>
 
 ---
-<br>
 
 ### Day 3:
 
