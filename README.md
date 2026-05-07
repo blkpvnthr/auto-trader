@@ -170,14 +170,14 @@ I had to reset to a fresh account ($100,000) since I was developing this on an a
 </p>
 <!-- markdownlint-enable MD033 -->
 
-The system appears capable of identifying favorable trade opportunities while also demonstrating an ability to manage risk by cutting losses when conditions deteriorate. However, these observations are preliminary and will require further validation across broader market conditions and longer evaluation periods.
+The system appears capable of identifying favorable trade opportunities while also demonstrating an ability to manage risk by cutting losses when conditions deteriorate. These observations are only preliminary and will require further validation across broader market conditions and longer evaluation periods.
 <br><br>
 
 ---
 
 ### Day 3:
 
-The system continued to let good trades develop and scaled deeper into runners while mitigating bad trades. No concerning results as of yet.
+The system continued to let winning trades develop and scaled deeper into runners while mitigating bad trades. No concerning results as of yet.
 
 <!-- markdownlint-disable MD033 -->
 <!-- Image carousel / gallery (README-friendly) -->
