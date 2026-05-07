@@ -174,7 +174,7 @@ I had to reset to a fresh account ($100,000) since I was developing this on an a
 
 ### Day 3:
 
-The system continued to let good trades develop and scaled into runners. Haven't seen any concerning results as of yet.
+The system continued to let good trades develop and scaled deeper into runners while mitigating bad trades. Haven't seen any concerning results as of yet.
 
 <!-- markdownlint-disable MD033 -->
 <!-- Image carousel / gallery (README-friendly) -->
