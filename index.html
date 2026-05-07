@@ -489,6 +489,64 @@
       gap: 14px;
     }
 
+    .feedback-dashboard {
+      width: min(760px, 100%);
+      margin: 28px auto 0;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      align-items: center;
+      gap: 28px;
+      text-align: left;
+    }
+
+    .feedback-chart-card,
+    .feedback-stats-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+    }
+
+    .feedback-chart-card {
+      display: grid;
+      place-items: center;
+    }
+
+    #feedbackPieChart {
+      width: 200px;
+      height: 200px;
+    }
+
+    .feedback-stats-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .feedback-result-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+      color: #e5e7eb;
+    }
+
+    .feedback-result-row:first-of-type {
+      border-top: 0;
+    }
+
+    .feedback-result-row strong {
+      color: #fff;
+    }
+
+    .feedback-message {
+      margin-top: 14px;
+      color: #bfdbfe;
+      font-size: 0.95rem;
+      min-height: 1.4em;
+    }
+
     .tags {
       display: flex;
       flex-wrap: wrap;
@@ -594,6 +652,11 @@
 
       .nav-links {
         display: none;
+      }
+
+      .feedback-dashboard {
+        grid-template-columns: 1fr;
+        text-align: center;
       }
     }
 
@@ -766,14 +829,54 @@
     </section>
 
     <section class="social-band">
-      <div class="container">
-        <h2>What do you think of this project?</h2>
-        <div class="social-actions">
-          <button class="btn btn-outline">👍 Like it</button>
-          <button class="btn btn-outline">Not interested</button>
-        </div>
-      </div>
-    </section>
+  <div class="container">
+    <h2>What do you think of this project?</h2>
+
+    <div class="social-actions">
+      <button class="btn btn-outline feedback-btn" data-vote="like">
+        👍 Like it
+      </button>
+
+      <button class="btn btn-outline feedback-btn" data-vote="dislike">
+        Not interested
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Feedback Modal -->
+<div class="modal-backdrop" id="feedbackModal">
+  <div class="modal" style="max-width:520px;">
+    <h3>Community Feedback</h3>
+
+    <p style="margin-bottom:20px;">
+      Live sentiment from visitors interacting with the project.
+    </p>
+
+    <div style="display:flex; justify-content:center;">
+      <canvas id="feedbackChart" width="320" height="320"></canvas>
+    </div>
+
+    <div
+      style="
+        display:flex;
+        justify-content:center;
+        gap:24px;
+        margin-top:18px;
+        font-weight:700;
+      "
+    >
+      <div>👍 <span id="likeCount">0</span></div>
+      <div>👎 <span id="dislikeCount">0</span></div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn btn-primary" onclick="closeFeedbackModal()">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
 
     <section class="content-section" id="team">
       <div class="container">
@@ -933,6 +1036,246 @@
     }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
 
     sections.forEach(section => observer.observe(section));
+
+
+    const feedbackStorageKey = 'quantumquantProjectFeedback';
+    const feedbackButtons = document.querySelectorAll('[data-feedback-vote]');
+    const feedbackPieChart = document.getElementById('feedbackPieChart');
+    const likeCountEl = document.getElementById('likeCount');
+    const notInterestedCountEl = document.getElementById('notInterestedCount');
+    const likePercentEl = document.getElementById('likePercent');
+    const notInterestedPercentEl = document.getElementById('notInterestedPercent');
+    const totalFeedbackCountEl = document.getElementById('totalFeedbackCount');
+    const feedbackMessageEl = document.getElementById('feedbackMessage');
+
+    function getFeedbackData() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(feedbackStorageKey));
+        return {
+          like: Number(saved?.like || 0),
+          notInterested: Number(saved?.notInterested || 0),
+        };
+      } catch (error) {
+        return { like: 0, notInterested: 0 };
+      }
+    }
+
+    function saveFeedbackData(data) {
+      localStorage.setItem(feedbackStorageKey, JSON.stringify(data));
+    }
+
+    function drawPieChart(data) {
+      if (!feedbackPieChart) return;
+
+      const ctx = feedbackPieChart.getContext('2d');
+      const width = feedbackPieChart.width;
+      const height = feedbackPieChart.height;
+      const centerX = width / 2;
+      const centerY = height / 2;
+      const radius = Math.min(width, height) / 2 - 10;
+      const total = data.like + data.notInterested;
+
+      ctx.clearRect(0, 0, width, height);
+
+      if (total === 0) {
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.18)';
+        ctx.fill();
+        ctx.fillStyle = '#e5e7eb';
+        ctx.font = '700 16px Inter, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('No votes yet', centerX, centerY);
+        return;
+      }
+
+      const likeAngle = (data.like / total) * Math.PI * 2;
+      const slices = [
+        { value: data.like, start: -Math.PI / 2, end: -Math.PI / 2 + likeAngle, color: '#60a5fa' },
+        { value: data.notInterested, start: -Math.PI / 2 + likeAngle, end: Math.PI * 1.5, color: '#f97316' },
+      ];
+
+      slices.forEach(slice => {
+        if (slice.value <= 0) return;
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.arc(centerX, centerY, radius, slice.start, slice.end);
+        ctx.closePath();
+        ctx.fillStyle = slice.color;
+        ctx.fill();
+      });
+
+      ctx.beginPath();
+      ctx.arc(centerX, centerY, radius * 0.58, 0, Math.PI * 2);
+      ctx.fillStyle = '#1f2937';
+      ctx.fill();
+
+      ctx.fillStyle = '#fff';
+      ctx.font = '800 24px Inter, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(String(total), centerX, centerY - 8);
+      ctx.font = '600 12px Inter, sans-serif';
+      ctx.fillStyle = '#d1d5db';
+      ctx.fillText('responses', centerX, centerY + 16);
+    }
+
+    function renderFeedback() {
+      const data = getFeedbackData();
+      const total = data.like + data.notInterested;
+      const likePercent = total ? Math.round((data.like / total) * 100) : 0;
+      const notInterestedPercent = total ? 100 - likePercent : 0;
+
+      likeCountEl.textContent = data.like;
+      notInterestedCountEl.textContent = data.notInterested;
+      likePercentEl.textContent = `${likePercent}%`;
+      notInterestedPercentEl.textContent = `${notInterestedPercent}%`;
+      totalFeedbackCountEl.textContent = total;
+      drawPieChart(data);
+    }
+
+    feedbackButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const voteType = button.dataset.feedbackVote;
+        const data = getFeedbackData();
+
+        if (voteType === 'like') data.like += 1;
+        if (voteType === 'notInterested') data.notInterested += 1;
+
+        saveFeedbackData(data);
+        renderFeedback();
+
+        feedbackMessageEl.textContent = voteType === 'like'
+          ? 'Thanks — your positive feedback was recorded.'
+          : 'Thanks — your feedback was recorded.';
+      });
+    });
+
+    renderFeedback();
   </script>
+  <script>
+  const feedbackButtons = document.querySelectorAll(".feedback-btn");
+
+  const feedbackModal = document.getElementById("feedbackModal");
+  const chartCanvas = document.getElementById("feedbackChart");
+  const ctx = chartCanvas.getContext("2d");
+
+  let feedbackData = JSON.parse(
+    localStorage.getItem("projectFeedback")
+  ) || {
+    like: 0,
+    dislike: 0,
+  };
+
+  function saveFeedback() {
+    localStorage.setItem(
+      "projectFeedback",
+      JSON.stringify(feedbackData)
+    );
+  }
+
+  function drawPieChart() {
+    const total =
+      feedbackData.like + feedbackData.dislike;
+
+    ctx.clearRect(0, 0, 320, 320);
+
+    if (total === 0) {
+      ctx.beginPath();
+      ctx.arc(160, 160, 120, 0, Math.PI * 2);
+      ctx.fillStyle = "#e5e7eb";
+      ctx.fill();
+
+      ctx.fillStyle = "#111827";
+      ctx.font = "16px sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillText("No feedback yet", 160, 165);
+      return;
+    }
+
+    const likeAngle =
+      (feedbackData.like / total) * Math.PI * 2;
+
+    // Likes
+    ctx.beginPath();
+    ctx.moveTo(160, 160);
+    ctx.arc(160, 160, 120, 0, likeAngle);
+    ctx.closePath();
+    ctx.fillStyle = "#2563eb";
+    ctx.fill();
+
+    // Dislikes
+    ctx.beginPath();
+    ctx.moveTo(160, 160);
+    ctx.arc(
+      160,
+      160,
+      120,
+      likeAngle,
+      Math.PI * 2
+    );
+    ctx.closePath();
+    ctx.fillStyle = "#ef4444";
+    ctx.fill();
+
+    // Center cutout
+    ctx.beginPath();
+    ctx.arc(160, 160, 55, 0, Math.PI * 2);
+    ctx.fillStyle = "#ffffff";
+    ctx.fill();
+
+    // Percent text
+    const likePct = Math.round(
+      (feedbackData.like / total) * 100
+    );
+
+    ctx.fillStyle = "#111827";
+    ctx.font = "bold 22px sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText(`${likePct}%`, 160, 154);
+
+    ctx.font = "14px sans-serif";
+    ctx.fillStyle = "#6b7280";
+    ctx.fillText("Positive", 160, 178);
+
+    document.getElementById("likeCount").textContent =
+      feedbackData.like;
+
+    document.getElementById(
+      "dislikeCount"
+    ).textContent = feedbackData.dislike;
+  }
+
+  function openFeedbackModal() {
+    feedbackModal.classList.add("open");
+    drawPieChart();
+  }
+
+  function closeFeedbackModal() {
+    feedbackModal.classList.remove("open");
+  }
+
+  feedbackButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const vote = button.dataset.vote;
+
+      if (vote === "like") {
+        feedbackData.like++;
+      } else {
+        feedbackData.dislike++;
+      }
+
+      saveFeedback();
+      openFeedbackModal();
+    });
+  });
+
+  feedbackModal.addEventListener("click", (e) => {
+    if (e.target === feedbackModal) {
+      closeFeedbackModal();
+    }
+  });
+</script>
 </body>
 </html>
