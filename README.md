@@ -207,9 +207,10 @@ Despite this run being considerably less impressive than the rest due to the dra
 
 I decided to start fresh and reset the account equity back to $13,000 for tomorrow’s session.
 
-<!-- markdownlint-enable MD033 --><!-- Image carousel / gallery (README-friendly) -->
+<!-- markdownlint-enable MD033 -->
+<!-- Image carousel / gallery (README-friendly) -->
 <p align="center">
-  <a href="images/13k-reset.png"><img src="images/13k-reset.png" width="900" height="500" alt="results" /></a>
+  <a href="images/13k-reset.png"><img src="images/13k-reset.png" width="900" height="500" alt="13k-reset" /></a>
 </p>
 
 
