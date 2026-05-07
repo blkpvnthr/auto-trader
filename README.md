@@ -189,7 +189,7 @@ The system continued to let good trades develop and scaled deeper into runners w
 <!-- markdownlint-enable MD033 -->
 
 >**UPDATE**<br>
-I was able to secure funding for an alpaca account with $13,000 as the initial investment in this system. So I redeveloped the program to paper trade with 13k instead of 100k. I plan on paper trading with the 13k initially to ensure the system still works as expected despite the reduced portfolio equity.
+I was able to secure capital for a live alpaca account with $13,000 as the initial investment. I redeveloped the program to paper trade with 13k instead of 100k. My plan is to paper trade the 13k for now to ensure the system will work as expected despite the reduced portfolio equity.
 
 I’ve set up the 13k account for live trading.
 
