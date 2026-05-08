@@ -222,7 +222,7 @@ I decided to start fresh and reset the account equity back to $13,000 for tomorr
 
 ### Additional Infrastructure
 
-The system also includes an index file you can run locally to keep track of account equity.
+The system also includes an web page you can run locally to keep track of account equity.
 
 <!-- markdownlint-disable MD033 -->
 <!-- Image carousel / gallery (README-friendly) -->
