@@ -897,14 +897,26 @@ def rank_candidates(latest: pd.DataFrame, model: Pipeline) -> pd.DataFrame:
 
     latest["model_continuation_prob"] = model.predict_proba(latest[FEATURES])[:, 1]
     
-    latest["rank_score"] = (
-            0.35 * latest["model_continuation_prob"]
-            + 0.20 * latest["momentum_score"]
-            + 0.15 * latest["signal_confidence"]
-            + 0.10 * latest["trend_score"]
+    if "signal_confidence" not in latest.columns:
+        latest["signal_confidence"] = latest["breakout_momentum_score"]
+
+    if "signal_confidence" not in latest.columns:
+        latest["signal_confidence"] = (
+            0.35 * latest["breakout_momentum_score"]
+            + 0.25 * latest["momentum_score"]
+            + 0.20 * latest["trend_score"]
             + 0.10 * latest["liquidity_score"]
-            + 0.10 * latest["volume_ratio20"].clip(0, 3) / 3
+            + 0.10 * latest["risk_on_score"]
         ).clip(0.0, 1.0)
+
+    latest["rank_score"] = (
+        0.35 * latest["model_continuation_prob"]
+        + 0.20 * latest["momentum_score"]
+        + 0.15 * latest["signal_confidence"]
+        + 0.10 * latest["trend_score"]
+        + 0.10 * latest["liquidity_score"]
+        + 0.10 * latest["volume_ratio20"].clip(0, 3) / 3
+    ).clip(0.0, 1.0)
 
     mask = (
         (latest["close"] >= MIN_PRICE)
