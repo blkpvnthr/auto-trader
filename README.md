@@ -231,7 +231,7 @@ The system also includes a web page you can run locally to keep track of account
 </p>
 <!-- markdownlint-enable MD033 -->
 
-This is the investor information page that goes over company goals. <a href="https://quantumquant.org">quantumquant.trade</a>
+This is the investor information page that goes over company goals. <a href="https://quantumquant.org">quantumquant.org</a>
 
 <!-- Image carousel / gallery (README-friendly) -->
 <p align="center">
