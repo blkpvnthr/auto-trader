@@ -220,9 +220,9 @@ I decided to start fresh and reset the account equity back to $13,000 for tomorr
 
 ---
 
-### Day 4:
+### Additional Infrastructure
 
-Just adding this here as a placeholder for now until i have actual content to poplulate this with. This is actually a locally running portfolio equity journal.
+The system also includes an index file you can run locally to keep track of account equity.
 
 <!-- markdownlint-disable MD033 -->
 <!-- Image carousel / gallery (README-friendly) -->
